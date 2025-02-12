@@ -1,0 +1,14 @@
+---- Create the project
+npx create-react-app online-resume
+npm install web- --save
+
+---- Add tailwindcss
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+npm install lucide-react
+
+---- Add sfcookies
+npm install sfcookies --save
+
+---- Add Axios
+npm install axios --save
