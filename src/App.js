@@ -3,6 +3,7 @@ import './App.css';
 import { useEffect, useState, useRef } from 'react';
 
 import { bake_cookie, read_cookie } from 'sfcookies';
+import { motion, AnimatePresence } from "framer-motion";
 
 import MainContent from './pages/MainContent';
 import About from './pages/About';
@@ -16,6 +17,8 @@ import Music from "./pages/Music"
 function App() {
 
   const [loading, setLoading] = useState(true);
+  const [innerHtml, setInnerHtml] = useState();
+  const [burnKey, setBurnKey] = useState(0); 
 
   const sidebarRef = useRef(null);
 
@@ -27,9 +30,11 @@ function App() {
   };
 
   const handlePageChange = (pageIndex) => {
+    setBurnKey((prevKey) => prevKey + 1);
     console.log("Reloading page...");
     bake_cookie("selectedPage", pageIndex);
-    window.location.reload();
+    setInnerHtml(<div className="container"><Sidebar ref={sidebarRef} onPageChange={handlePageChange} /><Music/></div>)
+    //window.location.reload();
   };
 
   useEffect(() => {
@@ -37,8 +42,14 @@ function App() {
     if(!pageCookie || pageCookie <0 || pageCookie > 100){
       bake_cookie("selectedPage", 0);
     }
+
+    if (!innerHtml){
+      setInnerHtml(<div className="container"><Sidebar ref={sidebarRef} onPageChange={handlePageChange} /><About/></div>)
+    }
+    
     setLoading(false);
   }, [])
+
 
   if(loading){
     return (
@@ -66,9 +77,21 @@ function App() {
     //About
     if(!loading && read_cookie("selectedPage") === 1){
       return(
-        <div className="container">
+      <div className="container">
         <Sidebar ref={sidebarRef} onPageChange={handlePageChange} />
-        <About/>
+        <div className="content">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={burnKey} // Key changes to reset animation
+            initial={{ opacity: 0, scale: 1.2, filter: "brightness(200%) sepia(100%)" }}
+            animate={{ opacity: 1, scale: 1, filter: "brightness(100%) sepia(0%)" }}
+            exit={{ opacity: 0, scale: 0.8, filter: "brightness(50%) sepia(80%)" }}
+            transition={{ duration: 1 }}
+          >
+            <About/>
+          </motion.div>
+        </AnimatePresence>
+      </div>
       </div>
       )
     }
@@ -76,20 +99,42 @@ function App() {
   //Languages
   if(!loading && read_cookie("selectedPage") === 2){
     return(
-      <div className="container">
+    <div className="container">
       <Sidebar ref={sidebarRef} onPageChange={handlePageChange} />
-      <Languages/>
-    </div>
+      <div className="content">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={burnKey} // Key changes to reset animation
+          initial={{ opacity: 0, scale: 1.2, filter: "brightness(200%) sepia(100%)" }}
+          animate={{ opacity: 1, scale: 1, filter: "brightness(100%) sepia(0%)" }}
+          exit={{ opacity: 0, scale: 0.8, filter: "brightness(50%) sepia(80%)" }}
+          transition={{ duration: 1 }}
+        >
+          <Languages/>
+        </motion.div>
+      </AnimatePresence>
+    </div></div>
     )
   }
 
   //WebProjects
   if(!loading && read_cookie("selectedPage") === 3){
     return(
-      <div className="container">
+    <div className="container">
       <Sidebar ref={sidebarRef} onPageChange={handlePageChange} />
-      <WebProjects/>
-    </div>
+      <div className="content">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={burnKey} // Key changes to reset animation
+          initial={{ opacity: 0, scale: 1.2, filter: "brightness(200%) sepia(100%)" }}
+          animate={{ opacity: 1, scale: 1, filter: "brightness(100%) sepia(0%)" }}
+          exit={{ opacity: 0, scale: 0.8, filter: "brightness(50%) sepia(80%)" }}
+          transition={{ duration: 1 }}
+        >
+          <WebProjects/>
+        </motion.div>
+      </AnimatePresence>
+    </div></div>
     )
   }
 
@@ -98,8 +143,19 @@ function App() {
     return(
     <div className="container">
       <Sidebar ref={sidebarRef} onPageChange={handlePageChange} />
-      <ApiProjects/>
-    </div>
+      <div className="content">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={burnKey} // Key changes to reset animation
+          initial={{ opacity: 0, scale: 1.2, filter: "brightness(200%) sepia(100%)" }}
+          animate={{ opacity: 1, scale: 1, filter: "brightness(100%) sepia(0%)" }}
+          exit={{ opacity: 0, scale: 0.8, filter: "brightness(50%) sepia(80%)" }}
+          transition={{ duration: 1 }}
+        >
+          <ApiProjects/>
+        </motion.div>
+      </AnimatePresence>
+    </div></div>
     )
   }
 
@@ -108,27 +164,60 @@ function App() {
     return(
     <div className="container">
       <Sidebar ref={sidebarRef} onPageChange={handlePageChange} />
-      <Music/>
-    </div>
+      <div className="content">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={burnKey} // Key changes to reset animation
+          initial={{ opacity: 0, scale: 1.2, filter: "brightness(200%) sepia(100%)" }}
+          animate={{ opacity: 1, scale: 1, filter: "brightness(100%) sepia(0%)" }}
+          exit={{ opacity: 0, scale: 0.8, filter: "brightness(50%) sepia(80%)" }}
+          transition={{ duration: 1 }}
+        >
+          <Music/>
+        </motion.div>
+      </AnimatePresence>
+    </div></div>
     )
-  }  
+  } 
 
   //Videos
   if(!loading && read_cookie("selectedPage") === 6){
     return(
     <div className="container">
       <Sidebar ref={sidebarRef} onPageChange={handlePageChange} />
-      <Videos/>
-    </div>
+      <div className="content">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={burnKey} // Key changes to reset animation
+          initial={{ opacity: 0, scale: 1.2, filter: "brightness(200%) sepia(100%)" }}
+          animate={{ opacity: 1, scale: 1, filter: "brightness(100%) sepia(0%)" }}
+          exit={{ opacity: 0, scale: 0.8, filter: "brightness(50%) sepia(80%)" }}
+          transition={{ duration: 1 }}
+        >
+          <Videos/>
+        </motion.div>
+      </AnimatePresence>
+    </div></div>
     )
   }
 
-  return(
+  return (
     <div className="container">
       <Sidebar ref={sidebarRef} onPageChange={handlePageChange} />
-      <MainContent/>
-    </div>
-  )
+      <div className="content">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={burnKey} // Key changes to reset animation
+          initial={{ opacity: 0, scale: 1.2, filter: "brightness(200%) sepia(100%)" }}
+          animate={{ opacity: 1, scale: 1, filter: "brightness(100%) sepia(0%)" }}
+          exit={{ opacity: 0, scale: 0.8, filter: "brightness(50%) sepia(80%)" }}
+          transition={{ duration: 1 }}
+        >
+          <MainContent/>
+        </motion.div>
+      </AnimatePresence>
+    </div></div>
+    )
 
 }
 

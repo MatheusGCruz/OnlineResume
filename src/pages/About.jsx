@@ -1,5 +1,6 @@
 import '../App.css';
 import { useState, useEffect } from "react";
+import useScreenSize from '../functions/ScreenSize';
 
 function About ({selectedLanguage}){
 
@@ -14,6 +15,7 @@ function About ({selectedLanguage}){
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const screenSize = useScreenSize();
 
   // Function to go to the next slide
   const nextSlide = () => {
@@ -35,12 +37,13 @@ function About ({selectedLanguage}){
 
     
     return(
-        <div className="container">
           <div className="content">
-                <div className="languages">
-                    <h1 class="worldlanguage">
-                    Sobre:
-                    </h1>
+            <div className="contentBackground"/>
+                <div className="textHeader" style={{height:.13*screenSize.height,width:.9*screenSize.fullWidth, fontSize:2*screenSize.font}}>
+                    <br/>Sobre:</div>
+
+                <div className='textContent' style={{height:.65*screenSize.height,width:.9*screenSize.fullWidth, fontSize:screenSize.font}}>
+
                 <p>Sou um engenheiro, formado pela Universidade Federal de Uberlândia</p>
                 <p>Comecei minha carreira em TI a alguns anos, iniciando como um freelancer, em um projeto que resultou em varias experiências, algumas doloridas, porém todas úteis)</p>
                 <p>Logo após isso, trabalhei como professor de informática, mudando depois para programador.</p>
@@ -54,17 +57,12 @@ function About ({selectedLanguage}){
                 <p>Database: MSSQL, MySQL, PostgreSQL, MongoDb, CosmosDB, Oracle</p>
                 <br/>
 
+                
                 </div>
-
-                <div className="slideshow">
-                    <div className="slide">{slides[currentIndex].content}</div>
-                    <div className="controls">
-                        <button onClick={prevSlide}>⬅ Previous</button>
-                        <button onClick={nextSlide}>Next ➡</button>
-                    </div>
+                <div className="textHeader" style={{height:.13*screenSize.height,width:.9*screenSize.fullWidth, fontSize:2*screenSize.font}}>
+                  <div className="slide">{slides[currentIndex].content}</div>
                 </div>
             </div>
-        </div>
     )
 }
 
