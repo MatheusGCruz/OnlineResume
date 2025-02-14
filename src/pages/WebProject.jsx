@@ -1,8 +1,8 @@
 function WebProjects ({redirectUrl, image, description}){
     return(
-        <div>
+        <div class="fill">
             <a href={redirectUrl}target="_blank" rel="noopener noreferrer">
-            <img src={image} alt={description} />
+            <img className="slideImage" src={image} alt={description}/>
           </a>
         </div>
     )

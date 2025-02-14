@@ -12,3 +12,6 @@ npm install sfcookies --save
 
 ---- Add Axios
 npm install axios --save
+
+---- Burning effects
+npm install framer-motion
