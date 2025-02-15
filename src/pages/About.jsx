@@ -22,18 +22,11 @@ function About ({selectedLanguage}){
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
   };
 
-  // Function to go to the previous slide
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
-    );
-  };
-
   // Auto-slide every 3 seconds
   useEffect(() => {
     const interval = setInterval(nextSlide, 3000);
     return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  });
 
     
     return(

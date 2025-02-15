@@ -26,7 +26,7 @@ function WebProjects ({selectedLanguage}){
     
       const [currentIndex, setCurrentIndex] = useState(0);
       const [webSiteDescription, setWebSiteDescription] = useState("");
-      const [webSiteName, setWebSiteName] = useState("");
+      //const [webSiteName, setWebSiteName] = useState("");
       const screenSize = useScreenSize();
       let slideIndex = 0;
       let delayTime = 5000;
@@ -34,30 +34,23 @@ function WebProjects ({selectedLanguage}){
       // Function to go to the next slide
       const nextSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-        let j = currentIndex;
         slideIndex = (slideIndex < slides.length-1?(slideIndex + 1):0);
-        setWebSiteName(slides[slideIndex].name);
+        //setWebSiteName(slides[slideIndex].name);
         setWebSiteDescription(slides[slideIndex].description);
       };
     
       const setSlide = (slide) => {
         slideIndex= slide.id;
         setCurrentIndex(slide.id);
-        setWebSiteName(slide.name);
+        //setWebSiteName(slide.name);
         setWebSiteDescription(slide.description);
-      };
-      // Function to go to the previous slide
-      const prevSlide = () => {
-        setCurrentIndex((prevIndex) =>
-          prevIndex === 0 ? slides.length - 1 : prevIndex - 1
-        );
       };
     
       // Auto-slide every 3 seconds
       useEffect(() => {
         const interval = setInterval(nextSlide, delayTime);
         return () => clearInterval(interval); // Cleanup on unmount
-      }, []);
+      });
 
     return(
           <div className="content">
