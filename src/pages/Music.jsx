@@ -28,7 +28,7 @@ function Music() {
 
     useEffect(() => {
       getFiles();
-    }, [])
+    })
 
     return (
       <div class="row" style={{

@@ -23,7 +23,7 @@ function ApiProjects ({selectedLanguage}){
     useEffect(() => {
         const interval = setInterval(nextSlide, 3000);
         return () => clearInterval(interval); // Cleanup on unmount
-    }, []);
+    });
     
     return(
           <div className="content">

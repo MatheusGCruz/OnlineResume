@@ -1,6 +1,6 @@
 ---- Create the project
 npx create-react-app online-resume
-npm install web- --save
+npm install web-vitals --save
 
 ---- Add tailwindcss
 npm install -D tailwindcss postcss autoprefixer

@@ -1,6 +1,6 @@
 import shuriken from './shuriken.svg';
 import './App.css';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef , useCallback} from 'react';
 
 import { bake_cookie, read_cookie } from 'sfcookies';
 import { motion, AnimatePresence } from "framer-motion";
@@ -22,20 +22,13 @@ function App() {
 
   const sidebarRef = useRef(null);
 
-  const toggleSidebar = () => {
-    if (sidebarRef.current) {
-      sidebarRef.current.toggle(); // Call the toggle function inside Sidebar
-    }
-
-  };
-
-  const handlePageChange = (pageIndex) => {
+  const handlePageChange = useCallback((pageIndex) => {
     setBurnKey((prevKey) => prevKey + 1);
     console.log("Reloading page...");
     bake_cookie("selectedPage", pageIndex);
     setInnerHtml(<div className="container"><Sidebar ref={sidebarRef} onPageChange={handlePageChange} /><Music/></div>)
     //window.location.reload();
-  };
+  }, []);
 
   useEffect(() => {
     let pageCookie = read_cookie("selectedPage")
@@ -48,7 +41,7 @@ function App() {
     }
     
     setLoading(false);
-  }, [])
+  }, [innerHtml, handlePageChange])
 
 
   if(loading){

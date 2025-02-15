@@ -32,7 +32,7 @@ function Videos() {
     useEffect(() => {
       getFiles();
 
-    }, [])
+    })
   
     return (   
         <div class="col" style={{width:screenSize.fullWidth, height:screenSize.height}}>
