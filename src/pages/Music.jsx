@@ -44,16 +44,16 @@ function Music() {
             
           <div class="rowC" style={{width:screenSize.fullWidth, height:screenSize.height}}>            
           <div style={{padding:'50px', border:'20px'}}>
-          <div className="backgroundClass"  style={{width:screenSize.width, fontSize:.8*screenSize.font, height:.9*screenSize.height, display: 'flex',  justifyContent:'center', alignItems:'center',padding:'50px'}}>
-              <div className="innerText" style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-              {musicId}</div>
-              <br/>
-              <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-                  <audio src={configs.music+musicId} controls autoPlay>
-                  Error when playing
-                    </audio>
-              </div>              
-          </div>     
+            <div className="backgroundClass"  style={{width:screenSize.width, fontSize:.8*screenSize.font, height:.8*screenSize.height,padding:'50px'}}>
+                <div className="innerText" style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+                {musicId}</div>
+                <br/>
+                <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+                    <audio src={configs.music+musicId} controls autoPlay>
+                    Error when playing
+                      </audio>
+                </div>              
+            </div>     
           </div>           
           <div style={{padding:'50px', border:'20px'}}>
             <div class="listContainer" style={{width:screenSize.width, fontSize:.8*screenSize.font, height:.9*screenSize.height,overflowY: 'scroll',padding:'10px'}}>

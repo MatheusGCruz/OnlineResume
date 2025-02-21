@@ -1,7 +1,10 @@
+import useScreenSize from '../functions/ScreenSize';
+
 function Weather (){
+    const screenSize = useScreenSize();
     
     return(
-        <iframe src="https://weather.antares.ninja/uberlandia" width="100%" height="100%" frameborder="0" title="Weather System webpage - VUE project"></iframe>
+        <iframe src="https://weather.antares.ninja/uberlandia"  style={{width:screenSize.fullWidth, height:screenSize.height}} height="100em" frameborder="0" title="Weather System webpage - VUE project"></iframe>
 
     )
 }
