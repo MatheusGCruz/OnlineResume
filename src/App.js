@@ -13,6 +13,7 @@ import ApiProjects from './pages/ApiProjects';
 import Sidebar from "./pages/SideBar";
 import Videos from "./pages/Videos"
 import Music from "./pages/Music"
+import Weather from "./pages/Weather"
 
 function App() {
 
@@ -193,6 +194,27 @@ function App() {
     </div></div>
     )
   }
+
+    //Weather
+    if(!loading && read_cookie("selectedPage") === 7){
+      return(
+      <div className="container">
+        <Sidebar ref={sidebarRef} onPageChange={handlePageChange} />
+        <div className="content">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={burnKey} // Key changes to reset animation
+            initial={{ opacity: 0, scale: 1.2, filter: "brightness(200%) sepia(100%)" }}
+            animate={{ opacity: 1, scale: 1, filter: "brightness(100%) sepia(0%)" }}
+            exit={{ opacity: 0, scale: 0.8, filter: "brightness(50%) sepia(80%)" }}
+            transition={{ duration: 1 }}
+          >
+            <Weather/>
+          </motion.div>
+        </AnimatePresence>
+      </div></div>
+      )
+    }
 
   return (
     <div className="container">
