@@ -29,6 +29,7 @@ const Sidebar = forwardRef(({onPageChange}, ref) => {
         <p  className="sidebarItem" onClick={() => selectPage(4)}>⚙️ Projetos API</p>
         <p  className="sidebarItem" onClick={() => selectPage(5)}>⚙️ Musicas</p>
         <p  className="sidebarItem" onClick={() => selectPage(6)}>⚙️ Videos</p>
+        <p  className="sidebarItem" onClick={() => selectPage(7)}>❄️ Weather </p>
       </nav>
     </div>
   );
