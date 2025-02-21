@@ -158,6 +158,15 @@ body {
   margin-left: 300px;
 }
 
+.sidebar:hover ~.itemDescription{
+  visibility: visible;
+}
+
+.itemDescription{
+  visibility: visible;
+}
+
+
 .slideshow {
   position: relative;
   width: 95%;
@@ -306,6 +315,12 @@ button{
 }
 
 .rowC{display:flex; flex-direction:row;}
+
+.rowNav{
+  display:flex; 
+  flex-direction:row;
+  cursor: pointer;
+}
 
 .innerText{
   text-align: center;

@@ -1,9 +1,11 @@
 import '../App.css';
 import { forwardRef, useImperativeHandle, useState } from "react";
+import useScreenSize from '../functions/ScreenSize';
 
 const Sidebar = forwardRef(({onPageChange}, ref) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedPage, setSelectedPage] = useState(0);
+  const screenSize = useScreenSize();
 
   // Expose the `toggle` function to the parent via ref
   useImperativeHandle(ref, () => ({
@@ -23,13 +25,27 @@ const Sidebar = forwardRef(({onPageChange}, ref) => {
 
       <h2 className="sidebarItem" onClick={() => selectPage(0)}>☰ Sidebar</h2>
       <nav>
-        <p  className="sidebarItem" onClick={() => selectPage(1)}>🏠 Sobre</p>
-        <p  className="sidebarItem" onClick={() => selectPage(2)}>👤 Linguagens</p>
-        <p  className="sidebarItem" onClick={() => selectPage(3)}>⚙️ Projetos WEB</p>
-        <p  className="sidebarItem" onClick={() => selectPage(4)}>⚙️ Projetos API</p>
-        <p  className="sidebarItem" onClick={() => selectPage(5)}>⚙️ Musicas</p>
-        <p  className="sidebarItem" onClick={() => selectPage(6)}>⚙️ Videos</p>
-        <p  className="sidebarItem" onClick={() => selectPage(7)}>❄️ Weather </p>
+        <div class="rowNav"  onClick={() => selectPage(1)}>
+          <p  className="sidebarItem" style={{fontSize:screenSize.font}}>🏠</p> <p className="itemDescription" style={{fontSize:screenSize.font}}>About</p>
+        </div>        
+        <div class="rowNav"  onClick={() => selectPage(2)}>
+          <p  className="sidebarItem" style={{fontSize:screenSize.font}}>🌐</p> <p className="itemDescription" style={{fontSize:screenSize.font}}>Languages</p>
+        </div>
+        <div class="rowNav"  onClick={() => selectPage(3)}>
+          <p  className="sidebarItem" style={{fontSize:screenSize.font}}>🌐</p> <p className="itemDescription" style={{fontSize:screenSize.font}}>Web Projects</p>
+        </div>
+        <div class="rowNav"  onClick={() => selectPage(4)}>
+          <p  className="sidebarItem" style={{fontSize:screenSize.font}}>⚙️</p> <p className="itemDescription" style={{fontSize:screenSize.font}}>API Projects</p>
+        </div>
+        <div class="rowNav"  onClick={() => selectPage(5)}>
+          <p  className="sidebarItem" style={{fontSize:screenSize.font}}>🎼</p> <p className="itemDescription" style={{fontSize:screenSize.font}}>Musics</p>
+        </div>
+        <div class="rowNav"  onClick={() => selectPage(6)}>
+          <p  className="sidebarItem" style={{fontSize:screenSize.font}}>📽️</p> <p className="itemDescription" style={{fontSize:screenSize.font}}>Videos</p>
+        </div>
+        <div class="rowNav"  onClick={() => selectPage(7)}>
+          <p  className="sidebarItem" style={{fontSize:screenSize.font}}>❄️</p> <p className="itemDescription" style={{fontSize:screenSize.font}}>Weather</p> 
+        </div>
       </nav>
     </div>
   );
