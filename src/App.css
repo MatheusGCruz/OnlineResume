@@ -71,8 +71,9 @@ body {
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  background-image: url('./images/metal.jpg');
+  background-image: url('./images/blackBoard.jpg');
   background-size: 100% auto no-repeat;
+  
 }
 
 .sidebar.open {
@@ -331,6 +332,7 @@ button{
   font-weight: bold;
   border-color: silver;
   text-shadow: #61dafb;
+  opacity: .7;
 }
 
 .innerText{

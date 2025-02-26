@@ -26,9 +26,9 @@ const Sidebar = forwardRef(({onPageChange}, ref) => {
           onMouseLeave={() => setIsOpen(false)}>
       <button className="close-btn" onClick={() => setIsOpen(!isOpen)}></button>
 
-      <div class="rowNav"  onClick={() => selectPage(0)}>
+      {/* <div class="rowNav"  onClick={() => selectPage(0)}>
         <h2  className="sidebarItem" style={{fontSize:screenSize.font, color:"silver"}} > [☰] </h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}> Sidebar </h2>}   
-      </div>  <br/> 
+      </div>  <br/>  */}
 
         <div class="rowNav"  onClick={() => selectPage(1)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🏠</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>About</h2>}          
@@ -36,9 +36,9 @@ const Sidebar = forwardRef(({onPageChange}, ref) => {
         <div class="rowNav"  onClick={() => selectPage(2)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🌐</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Languages</h2>}
         </div><br/>  
-        <div class="rowNav"  onClick={() => selectPage(3)}>
+        {/* <div class="rowNav"  onClick={() => selectPage(3)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🌐</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Web Projects</h2>}
-        </div><br/>  
+        </div><br/>   */}
         <div class="rowNav"  onClick={() => selectPage(4)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>⚙️</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>API Projects</h2>}
         </div><br/>  
