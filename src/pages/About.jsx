@@ -8,10 +8,10 @@ function About ({selectedLanguage}){
 
 
   const slides = [
-    { id: 1, content: "🌍 Welcome to the world!" },
-    { id: 2, content: "🚀 React makes UI dynamic!" },
-    { id: 3, content: "🎨 Customize your slides!" },
-    { id: 4, content: "💡 Keep learning every day!" }
+    { id: 1, content: "🌎 Welcome to my personal online resume. 🌎" },
+    { id: 2, content: "🃏 Curiosity: I'm a jake of all trades. I'm even a professional certificated lifeguard 🃏" },
+    { id: 3, content: "🧩 Personal Hobbies: Games, Animes and Swimming 🧩" },
+    { id: 4, content: "💡 Always keep learning. Everytime you learn something new, you onpen your mind to new possibilities. 💡" }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,18 +33,18 @@ function About ({selectedLanguage}){
           <div className="content">
             <div className="contentBackground"/>
                 <div className="textHeader" style={{height:.13*screenSize.height,width:.9*screenSize.fullWidth, fontSize:2*screenSize.font}}>
-                    <br/>Sobre:</div>
+                    <br/>About:</div>
 
                 <div className='textContent' style={{height:.65*screenSize.height,width:.9*screenSize.fullWidth, fontSize:screenSize.font}}>
 
-                <p>Sou um engenheiro, formado pela Universidade Federal de Uberlândia</p>
-                <p>Comecei minha carreira em TI a alguns anos, iniciando como um freelancer, em um projeto que resultou em varias experiências, algumas doloridas, porém todas úteis)</p>
-                <p>Logo após isso, trabalhei como professor de informática, mudando depois para programador.</p>
-                <p>Em meu primeiro serviço como programador, iniciei como um desenvolvedor SQL, migrando para backend</p>
+                <p>I'm a mechatronic's Engineer, graduated on Federal University of Uberlandia</p> 
+                <p>My IT carrer started a few years ago, on a project that resulted in a lot of experiences(a few of them painful, but all useful)</p>
+                <p>For a few months, I worked as a computer teacher, changing to a developer soon after.</p>
+                <p>In my first developer role, I was asigned to a SQL developer role, later ingressing on a backend enviroment.</p>
                 <br/>
-                <p>Hoje, sou um desenvolvedor Fullstack, com enfâse em backend.</p>
-                <p>Já trabalhei com diversas linguagens, frameworks e bancos de dados.</p>
-                <p>Dentre eles:</p>
+                <p>Now, I'm a Fullstack developer, heavly focused on Backend, and system's analysis and support.</p>
+                <p>Worked on diferent languages, frameworks and databases.</p>
+                <p>To list some:</p>
                 <p>Backend: Java, C#, C++, C, VB.Net, Asp.net, etc</p>
                 <p>Frontend: HTML, CSS, React.js, Angular, etc</p>
                 <p>Database: MSSQL, MySQL, PostgreSQL, MongoDb, CosmosDB, Oracle</p>
