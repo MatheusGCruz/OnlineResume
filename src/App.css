@@ -61,7 +61,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 40px;  /* Small width when collapsed */
+  width: 60px;  /* Small width when collapsed */
   height: 100%;
   background: #333;
   color: #333;
@@ -71,8 +71,9 @@ body {
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  background-image: url('./images/metal.jpg');
+  background-image: url('./images/blackBoard.jpg');
   background-size: 100% auto no-repeat;
+  
 }
 
 .sidebar.open {
@@ -80,7 +81,7 @@ body {
 }
 
 .sidebar h2 {
-  margin-top: 0;
+  margin: 1vh;
 }
 
 .sidebar nav {
@@ -319,7 +320,19 @@ button{
 .rowNav{
   display:flex; 
   flex-direction:row;
+  width: 80%;
   cursor: pointer;
+  text-align: center;
+  color: navy;
+  background-image: url('./images/polished.png');
+  background-size: 100% auto;
+  font-size: 1.1em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  font-weight: bold;
+  border-color: silver;
+  text-shadow: #61dafb;
+  opacity: .7;
 }
 
 .innerText{
