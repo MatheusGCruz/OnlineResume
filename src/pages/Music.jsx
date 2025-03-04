@@ -1,4 +1,4 @@
-import { useState , useEffect } from 'react';
+import { useState , useEffect, useCallback } from 'react';
 import '../App.css';
 import useScreenSize from '../functions/ScreenSize';
 import background from "../images/concert-house.svg";
@@ -20,15 +20,15 @@ function Music() {
       setMusicId(musicId);
     }
 
-    const getFiles = async() => {
+    const getFiles = useCallback(async() => {
       let response = await axios.get(
           configs.musicFiles);
           setFiles(response.data)    
-    }
+    }, [configs.musicFiles])
 
     useEffect(() => {
       getFiles();
-    })
+    }, [getFiles])
 
     return (
       <div class="row" style={{

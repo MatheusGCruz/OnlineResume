@@ -1,4 +1,4 @@
-import { useState , useEffect, useRef } from 'react';
+import { useState , useEffect, useRef, useCallback } from 'react';
 import useScreenSize from '../functions/ScreenSize';
 import '../App.css';
 import useConfigs from '../functions/Config';
@@ -23,16 +23,16 @@ function Videos() {
     }
     }
 
-    const getFiles = async() => {
+    const getFiles = useCallback(async() => {
       let response = await axios.get(
           configs.videoFiles);
           setFiles(response.data)    
-    }
+    },[configs.videoFiles])
 
     useEffect(() => {
       getFiles();
 
-    })
+    }, [getFiles])
   
     return (   
         <div class="col" style={{width:screenSize.fullWidth, height:screenSize.height}}>
