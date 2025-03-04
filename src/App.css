@@ -316,6 +316,7 @@ button{
 }
 
 .rowC{display:flex; flex-direction:row;}
+.colC{display:flex; flex-direction:column; overflow-y: scroll;}
 
 .rowNav{
   display:flex; 
@@ -366,4 +367,9 @@ button{
 
   width: 100%;
   height: 100%;
+}
+
+.sliderBar{
+  width: "100%"; 
+  accent-color: red
 }
