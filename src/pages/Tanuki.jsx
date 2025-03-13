@@ -1,6 +1,6 @@
 import useScreenSize from '../functions/ScreenSize';
 
-function Weather (){
+function Tanuki (){
     const screenSize = useScreenSize();
     
     return(
@@ -8,4 +8,4 @@ function Weather (){
     )
 }
 
-export default Weather
+export default Tanuki

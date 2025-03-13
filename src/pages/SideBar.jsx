@@ -20,6 +20,10 @@ const Sidebar = forwardRef(({onPageChange}, ref) => {
     onPageChange(pageIndex);
   };
 
+  const handleRedirectClick = (hrefLink) => {
+    window.location.href = hrefLink;
+  };
+
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}
           onMouseEnter={() => setIsOpen(true)}
@@ -32,7 +36,13 @@ const Sidebar = forwardRef(({onPageChange}, ref) => {
 
         <div class="rowNav"  onClick={() => selectPage(1)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🏠</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>About</h2>}          
-        </div>   <br/>     
+        </div>   <br/> 
+        <div class="rowNav"  onClick={() => handleRedirectClick("https://www.linkedin.com/in/matheusgcruz/")}>
+          <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>💼</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}> 🔗LinkedIn</h2> }
+        </div><br/>  
+        <div class="rowNav"  onClick={() => handleRedirectClick("https://github.com/MatheusGCruz")}>
+          <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🗃️</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}> 🔗 GitHub</h2> }
+        </div>   <br/>   
         {/* <div class="rowNav"  onClick={() => selectPage(2)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🌐</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Languages</h2>}
         </div><br/>   */}
@@ -60,6 +70,7 @@ const Sidebar = forwardRef(({onPageChange}, ref) => {
         <div class="rowNav"  onClick={() => selectPage(10)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🦝</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Tanuki</h2> }
         </div>
+
 
     </div>
   );

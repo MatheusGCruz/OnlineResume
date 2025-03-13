@@ -45,7 +45,7 @@ body {
 
 /* Layout */
 .container {
-  background-color: rgb(9, 255, 0);
+  background-color: navy;
   background-image: url('./images/autoBack.jpg');
   display: flex;
   height: 100vh ;
