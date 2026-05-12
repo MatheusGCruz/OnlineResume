@@ -18,6 +18,7 @@ import Grafana from "./pages/Grafana"
 import VBook from "./pages/VBook"
 import Tanuki from "./pages/Tanuki"
 import Santa from './pages/Santa';
+import Checkers from "./pages/Checkers";
 
 
 function App() {
@@ -283,7 +284,7 @@ function App() {
         )
       }
 
-            //Tanuki
+            //Santa Tanuki
       if(!loading && read_cookie("selectedPage") === 11){
         return(
         <div className="container">
@@ -298,6 +299,27 @@ function App() {
               transition={{ duration: 1 }}
             >
               <Santa/>
+            </motion.div>
+          </AnimatePresence>
+        </div></div>
+        )
+      }
+
+      //Checkers
+      if(!loading && read_cookie("selectedPage") === 12){
+        return(
+        <div className="container">
+          <Sidebar ref={sidebarRef} onPageChange={handlePageChange} />
+          <div className="content">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={burnKey} // Key changes to reset animation
+              initial={{ opacity: 0, scale: 1.2, filter: "brightness(200%) sepia(100%)" }}
+              animate={{ opacity: 1, scale: 1, filter: "brightness(100%) sepia(0%)" }}
+              exit={{ opacity: 0, scale: 0.8, filter: "brightness(50%) sepia(80%)" }}
+              transition={{ duration: 1 }}
+            >
+              <Checkers/>
             </motion.div>
           </AnimatePresence>
         </div></div>
