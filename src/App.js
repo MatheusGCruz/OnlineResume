@@ -341,7 +341,7 @@ function App() {
               exit={{ opacity: 0, scale: 0.8, filter: "brightness(50%) sepia(80%)" }}
               transition={{ duration: 1 }}
             >
-              <Checkers/>
+              <Snake/>
             </motion.div>
           </AnimatePresence>
         </div></div>
