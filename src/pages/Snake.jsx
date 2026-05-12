@@ -4,7 +4,7 @@ function Snake (){
     const screenSize = useScreenSize();
     
     return(
-        <iframe src="https://snake.antares.ninja/"  style={{width:screenSize.fullWidth, height:screenSize.height}} height="100em" frameborder="0" title="Grafana - C# data collector"></iframe>
+        <iframe src="https://snake.antares.ninja/"  style={{width:screenSize.fullWidth, height:screenSize.height}} height="100em" frameborder="0" title="Antares Snake"></iframe>
     )
 }
 
