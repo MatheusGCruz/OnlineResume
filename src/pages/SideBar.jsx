@@ -79,6 +79,9 @@ const Sidebar = forwardRef(({onPageChange}, ref) => {
         <div class="rowNav"  onClick={() => selectPage(14)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🐍</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Snake</h2> }
         </div>
+        <div class="rowNav"  onClick={() => selectPage(15)}>
+          <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🔄</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Converter</h2> }
+        </div>
 
 
     </div>
