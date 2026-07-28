@@ -133,10 +133,10 @@ function Music() {
 
 
     return (
-      <div class={screenSize.orientationLandscape?"rowC":"colC"} style={{
+      <div className={screenSize.orientationLandscape?"rowC":"colC"} style={{
         position: "relative",
-        width: "100vw",
-        height: "90vh",
+        width: "100%",
+        height: "100%",
         backgroundImage: `url(${background})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -144,9 +144,9 @@ function Music() {
         opacity:1,
       }}> 
             
-          <div class={screenSize.orientationLandscape?"rowC":"colC"} style={{width:screenSize.fullWidth, height:screenSize.height}}>            
-          <div style={{padding:'50px', border:'20px'}}>
-            <div className="backgroundClass"  style={{width:.9*screenSize.fullWidth, fontSize:.8*screenSize.font, height:.8*screenSize.height,padding:'50px'}}>
+          <div className={screenSize.orientationLandscape?"rowC":"colC"} style={{width:"100%", height:"100%"}}>            
+          <div style={{padding:'10px', width:"100%"}}>
+            <div className="backgroundClass"  style={{width:"100%", fontSize:.8*screenSize.font, height:"calc(100vh - 40px)",padding:'14px'}}>
                 {warning && <div className="innerText" style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>{warning}</div>}
                 <div className="innerText" style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                 {musicId}</div>
@@ -163,7 +163,7 @@ function Music() {
                     Error when playing
                       </audio>
                 </div>    
-                <div  class="rowC" style={{width:screenSize.fullWidth}}>
+                <div  className="rowC" style={{width:"100%"}}>
                     <button className="innerText" onClick={shuffleSong}>🔀 Shuffle</button>                 
                     <button className="innerText" onClick={previousSong}>⏮️ Previous</button>  
                     <button className="innerText" onClick={pauseSong}>⏸️ Pause</button>   
@@ -198,9 +198,9 @@ function Music() {
 
 
 
-        <div style={{border:'20px'}}>
-            <div class="listContainer" style={{width:.9*screenSize.fullWidth, fontSize:.9*screenSize.font, height:.6*screenSize.height,overflowY: 'scroll',padding:'10px'}}>
-                { files.map( (file) => <div><button style={{width:'100%', fontSize:.8*screenSize.font}} key={file} onClick={(e) =>{playMusic(e, file)}}>{file}</button></div>) }
+        <div>
+            <div className="listContainer" style={{width:"100%", fontSize:.9*screenSize.font, height:"32vh",overflowY: 'auto',padding:'8px'}}>
+                { files.map( (file) => <div key={file}><button style={{width:'100%', fontSize:.8*screenSize.font}} onClick={(e) =>{playMusic(e, file)}}>{file}</button></div>) }
             </div>
           </div>  
             </div>     
