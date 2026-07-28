@@ -5,7 +5,7 @@ function Languages ({selectedLanguage}){
     const screenSize = useScreenSize();
     return(
           <div className="content">
-            <div class="rowC">
+            <div className="rowC">
                 <div>
                 <div className="textHeader" style={{height:.2*screenSize.height,width:.9*screenSize.width, fontSize:2*screenSize.font}}>
                     <br/>Idiomas:</div>

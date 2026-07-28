@@ -34,13 +34,13 @@ const Sidebar = forwardRef(({onPageChange}, ref) => {
         <h2  className="sidebarItem" style={{fontSize:screenSize.font, color:"silver"}} > [☰] </h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}> Sidebar </h2>}   
       </div>  <br/>  */}
 
-        <div class="rowNav"  onClick={() => selectPage(1)}>
+        <div className="rowNav"  onClick={() => selectPage(1)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🏠</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>About</h2>}          
         </div>   <br/> 
-        <div class="rowNav"  onClick={() => handleRedirectClick("https://www.linkedin.com/in/matheusgcruz/")}>
+        <div className="rowNav"  onClick={() => handleRedirectClick("https://www.linkedin.com/in/matheusgcruz/")}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>💼</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}> 🔗LinkedIn</h2> }
         </div><br/>  
-        <div class="rowNav"  onClick={() => handleRedirectClick("https://github.com/MatheusGCruz")}>
+        <div className="rowNav"  onClick={() => handleRedirectClick("https://github.com/MatheusGCruz")}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🗃️</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}> 🔗 GitHub</h2> }
         </div>   <br/>   
         {/* <div class="rowNav"  onClick={() => selectPage(2)}>
@@ -49,37 +49,34 @@ const Sidebar = forwardRef(({onPageChange}, ref) => {
         {/* <div class="rowNav"  onClick={() => selectPage(3)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🌐</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Web Projects</h2>}
         </div><br/>   */}
-        <div class="rowNav"  onClick={() => selectPage(4)}>
+        <div className="rowNav"  onClick={() => selectPage(4)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>⚙️</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>API Projects</h2>}
         </div><br/>  
-        <div class="rowNav"  onClick={() => selectPage(5)}>
+        <div className="rowNav"  onClick={() => selectPage(5)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🎼</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Musics</h2>}
         </div><br/>  
-        <div class="rowNav"  onClick={() => selectPage(6)}>
+        <div className="rowNav"  onClick={() => selectPage(6)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>📽️</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Videos</h2>}
         </div><br/>  
-        <div class="rowNav"  onClick={() => selectPage(7)}>
+        <div className="rowNav"  onClick={() => selectPage(7)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>❄️</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Weather</h2> }
         </div><br/>  
-        <div class="rowNav"  onClick={() => selectPage(8)}>
+        <div className="rowNav"  onClick={() => selectPage(8)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>📊</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Grafana</h2> }
         </div><br/>  
-        <div class="rowNav"  onClick={() => selectPage(9)}>
+        <div className="rowNav"  onClick={() => selectPage(9)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>📖</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>VBook</h2> }
         </div><br/>  
-        <div class="rowNav"  onClick={() => selectPage(10)}>
+        <div className="rowNav"  onClick={() => selectPage(10)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🦝</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Tanuki</h2> }
         </div><br/>  
-        <div class="rowNav"  onClick={() => selectPage(11)}>
+        <div className="rowNav"  onClick={() => selectPage(11)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🌟</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Santa Tanuki</h2> }
         </div><br/> 
-        <div class="rowNav"  onClick={() => selectPage(12)}>
-          <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>⛁</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Damas</h2> }
+        <div className="rowNav"  onClick={() => selectPage(12)}>
+          <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🎮</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Games</h2> }
         </div><br/> 
-        <div class="rowNav"  onClick={() => selectPage(14)}>
-          <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🐍</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Snake</h2> }
-        </div>
-        <div class="rowNav"  onClick={() => selectPage(15)}>
+        <div className="rowNav"  onClick={() => selectPage(13)}>
           <h2  className="sidebarItem" style={{fontSize:screenSize.font}}>🔄</h2> {isOpen && <h2 className="itemDescription" style={{fontSize:screenSize.font}}>Converter</h2> }
         </div>
 

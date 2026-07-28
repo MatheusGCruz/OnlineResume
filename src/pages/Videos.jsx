@@ -35,7 +35,7 @@ function Videos() {
     }, [getFiles])
   
     return (   
-        <div class="col" style={{width:screenSize.fullWidth, height:screenSize.height}}>
+        <div className="col" style={{width:"100%", height:"100%"}}>
           <div className="backgroundClass"  >
           <div className="innerText" style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
           {videoId}</div>
@@ -43,7 +43,7 @@ function Videos() {
             <br />
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
 
-            <video ref={videoRef} width={0.9*screenSize.fullWidth} height={0.6*screenSize.height} controls autoPlay>
+            <video ref={videoRef} width="100%" height="auto" controls autoPlay>
               <source src={configs.videos+videoId} type='video/mp4'></source>
               Error when playing
             </video>
@@ -51,9 +51,9 @@ function Videos() {
         </div>
         
           
-        <div style={{padding:.5*screenSize.verticalPadding, border:'20px'}}>
-          <div class="listContainer" style={{height:.3*screenSize.height , overflowY: 'scroll',padding:'10px'}}>
-            { files.map( (file) => <div><button style={{width:'100%', fontSize:.8*screenSize.font}} key={file} onClick={(e) =>{playVideo(e, file)}}>{file}</button></div>) }
+        <div style={{padding:.5*screenSize.verticalPadding}}>
+          <div className="listContainer" style={{height:"24vh" , overflowY: 'auto',padding:'8px'}}>
+            { files.map( (file) => <div key={file}><button style={{width:'100%', fontSize:.8*screenSize.font}} onClick={(e) =>{playVideo(e, file)}}>{file}</button></div>) }
           </div>
         </div>     
           </div>)

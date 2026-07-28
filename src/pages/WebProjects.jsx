@@ -55,13 +55,13 @@ function WebProjects ({selectedLanguage}){
     return(
           <div className="content">
             <div className="contentBackground"/>
-            <div class="rowC">
+            <div className="rowC">
               <div>
                 <div className="textHeader" style={{width:.4*screenSize.fullWidth, height:.1*screenSize.height, fontSize:2*screenSize.font}}>
                   Web Projects
                 </div>   
                 <div className="textContent" style={{width:.4*screenSize.fullWidth, height:.3*screenSize.height}}>
-                  { slides.map( (slide) => slide.id % 2 === 0?<div><button style={{width:'100%', fontSize:.8*screenSize.font}} key={slide} onClick={(e) =>{setSlide(slide)}}>{slide.name}</button></div> : null) }
+                  { slides.map( (slide) => slide.id % 2 === 0?<div key={slide.id}><button style={{width:'100%', fontSize:.8*screenSize.font}} onClick={(e) =>{setSlide(slide)}}>{slide.name}</button></div> : null) }
                 </div>
                 <div className="textHeader" style={{width:.4*screenSize.fullWidth, height:.02*screenSize.height, fontSize:5*screenSize.fontSize}}>
                 </div> 
