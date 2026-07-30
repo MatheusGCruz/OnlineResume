@@ -4,9 +4,9 @@ const useConfigs = () => {
   const [config] = useState({
         videoFiles:"https://api.antares.ninja/videoFiles",
         mkvVideos:"https://api.antares.ninja/mkv-videos",
-        musicFiles:"https://api.antares.ninja/musicFiles",
+        musicFiles:"https://api.antares.ninja/music/files",
         videos:"https://api.antares.ninja/videos",
-        music:"https://api.antares.ninja/music",
+        music:"https://api.antares.ninja/music/",
         book:"https://api.antares.ninja/book"
   });
 
