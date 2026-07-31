@@ -326,6 +326,26 @@ button:focus-visible,
   display: none;
 }
 
+.listContainer.visibleScrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #570505 #e0d9cf;
+}
+
+.listContainer.visibleScrollbar::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+}
+
+.listContainer.visibleScrollbar::-webkit-scrollbar-track {
+  background: #e0d9cf;
+  border-radius: 5px;
+}
+
+.listContainer.visibleScrollbar::-webkit-scrollbar-thumb {
+  background: #570505a6;
+  border-radius: 5px;
+}
+
 .slideImage {
   object-fit: cover;
   display: block;
