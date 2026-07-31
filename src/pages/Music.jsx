@@ -48,6 +48,12 @@ function Music() {
     }, [getFiles, musicId])
 
     useEffect(() => {
+      if (audioRef.current) {
+        audioRef.current.volume = volume;
+      }
+    }, [musicId]);
+
+    useEffect(() => {
       const handleDeviceChange = async () => {
         setWarning("⚠️ Audio output device may have changed!");
         pauseSong();
