@@ -152,7 +152,7 @@ function Music() {
             
           <div className={screenSize.orientationLandscape?"rowC":"colC"} style={{width:"100%", height:"100%"}}>            
           <div style={{padding:'10px', width:"100%"}}>
-            <div className="backgroundClass"  style={{width:"100%", fontSize:.8*screenSize.font, height:"calc(100vh - 40px)",padding:'14px'}}>
+            <div className="backgroundClass"  style={{width:"100%", fontSize:.8*screenSize.font, height:"calc(100vh - 40px)",padding:'14px', display:'flex', flexDirection:'column'}}>
                 {warning && <div className="innerText" style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>{warning}</div>}
                 <div className="innerText" style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                 {musicId}</div>
@@ -204,11 +204,12 @@ function Music() {
 
 
 
-        <div>
-            <div className="listContainer" style={{width:"100%", fontSize:.9*screenSize.font, height:"32vh",overflowY: 'auto',padding:'8px'}}>
-                { files.map( (file) => <div key={file}><button style={{width:'100%', fontSize:.8*screenSize.font}} onClick={(e) =>{playMusic(e, file)}}>{file}</button></div>) }
+        <div style={{flex:9, minHeight:0, display:'flex', flexDirection:'column'}}>
+            <div className="listContainer visibleScrollbar" style={{width:"100%", fontSize:.9*screenSize.font, flex:1, minHeight:0, overflowY: 'auto',padding:'8px', direction:'rtl'}}>
+                { files.map( (file) => <div key={file} style={{direction:'ltr'}}><button style={{width:'100%', fontSize:.8*screenSize.font}} onClick={(e) =>{playMusic(e, file)}}>{file}</button></div>) }
             </div>
           </div>  
+          <div style={{flex:1}}/>
             </div>     
           </div>           
     
