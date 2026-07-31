@@ -51,7 +51,7 @@ function Music() {
       if (audioRef.current) {
         audioRef.current.volume = volume;
       }
-    }, [musicId]);
+    }, [musicId, volume]);
 
     useEffect(() => {
       const handleDeviceChange = async () => {
